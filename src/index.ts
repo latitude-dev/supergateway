@@ -77,6 +77,9 @@ const stdioToSse = async (
   const sessions: Record<string, { transport: SSEServerTransport; response: express.Response }> = {}
 
   const app = express()
+  app.get("/health", (_, res) => {
+    res.send("OK");
+  });
   app.use((req, res, next) => {
     if (req.path === messagePath) return next()
     return bodyParser.json()(req, res, next)
