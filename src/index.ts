@@ -29,8 +29,8 @@ import { fileURLToPath } from 'url'
 import { join, dirname } from 'path'
 import { readFileSync } from 'fs'
 
-const log = (...args: any[]) => console.log('[supergateway]', ...args)
-const logStderr = (...args: any[]) => console.error('[supergateway]', ...args)
+const log = (...args: any[]) => console.log('[latitude-supergateway]', ...args)
+const logStderr = (...args: any[]) => console.error('[latitude-supergateway]', ...args)
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -41,7 +41,7 @@ function getVersion(): string {
     const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf-8'))
     return packageJson.version || '1.0.0'
   } catch (err) {
-    console.error('[supergateway] Unable to retrieve version:', err)
+    console.error('[latitude-supergateway] Unable to retrieve version:', err)
     return 'unknown'
   }
 }
@@ -54,7 +54,6 @@ const stdioToSse = async (
   messagePath: string
 ) => {
   log('Starting...')
-  log('Supergateway is supported by Superinterface - https://superinterface.ai')
   log(`  - port: ${port}`)
   log(`  - stdio: ${stdioCmd}`)
   if (baseUrl) {
