@@ -4,8 +4,9 @@
   "description": "Run MCP stdio servers over SSE or visa versa",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/supercorp-ai/supergateway.git"
+    "url": "git+https://github.com/latitude-dev/supergateway.git"
   },
+  "homepage": "https://latitude.so",
   "keywords": [
     "mcp",
     "stdio",
